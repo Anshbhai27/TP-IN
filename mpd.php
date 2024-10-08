@@ -15,7 +15,7 @@ $id = $_GET['id'] ?? exit("Error: ID not provided.");
 $channelInfo = getChannel($id);
 $dashUrl = $channelInfo['streamData']['initialUrl'] ?? exit("Error: Stream URL not found.");
 $cacheFile = $cacheFolder . "/$id.mpd";
-$userAgent = 'Mozilla/5.0';
+$userAgent = 'Babel/5.0';
 
 // chk if cache exist
 if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
